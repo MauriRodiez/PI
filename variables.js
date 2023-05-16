@@ -52,3 +52,17 @@ console.log(n1 % n2); // modulo - resto de la division
 // Backticks ``
 
 console.log(` Hola ${nombre} ${APELLIDO} como estas?`);
+
+function ejemplo(txt) {
+  let texto = "Hola, soy una funcion";
+  return texto;
+}
+
+console.log(ejemplo());
+
+//comparacion
+
+let a = 2;
+let b = 5;
+
+console.log(a > b);
