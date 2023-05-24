@@ -12,44 +12,105 @@ console.log(resultado);
 
 console.log("---------------- Ejercicios ---------------");
 
-// 1
+// 1_ Pasar de pulgadas a centimetros
 
-const CONVERT = (pulgada) => pulgada * 2.54;
+const CONVERT_CM = (pulgadas) => pulgadas * 2.54;
 
-let resultado1 = CONVERT(2);
-console.log(resultado1);
+let resultadoCM = CONVERT_CM(2);
+console.log(resultadoCM);
+console.log("---------------------------------------------");
 
-console.log("-------------------------------");
+// 2_ Recibe string y convierte en url
 
-// 2
+const CONVERT_URL = (word) => "https://www." + word + ".com";
 
-const URL = (texto) => "https://www." + texto + ".com.uy";
+let resultado_URL = CONVERT_URL("pepito");
+console.log(resultado_URL);
+console.log("---------------------------------------------");
 
-let txtweb = URL("programando");
-console.log(txtweb);
+// 3_ Recibe string y lo devuelve con admiracion
 
-console.log("-------------------------------");
+const CONVERT_AD = (text) => text + "!";
 
-// 3
+let resultado_AD = CONVERT_AD("La vida es bella");
+console.log(resultado_AD);
+console.log("---------------------------------------------");
 
-const FRASE = (txtMensaje) => txtMensaje + "!!";
+// 4_ Calcular edad de perros
 
-let resFrase = FRASE("La vida es bella");
-console.log(resFrase);
+const EDAD_PERROS = (edad) => edad * 7;
 
-console.log("-------------------------------");
+let perrosEdad = EDAD_PERROS(7);
+console.log(perrosEdad);
+console.log("---------------------------------------------");
 
-// 4
-const EDAD_PERRO = (edad) => edad * 7;
+// 5_ Valor hora de trabajo
 
-let resEdad = EDAD_PERRO(5);
-console.log(resEdad);
+const VALOR_HORA = (salario) => salario / 40;
 
-console.log("-------------------------------");
+let valorHora = VALOR_HORA(25000);
+console.log(valorHora);
+console.log("---------------------------------------------");
 
-// 5
+// 6_ CALCULAR IMC
 
-const VALOR_HORA = (salario) => salario / 40 / 8;
+const IMC = (peso, altura) => peso / (altura * altura);
 
-let resHora = VALOR_HORA(20000);
-console.log(resHora);
+let indiceMC = IMC(72, 1.7);
+console.log(indiceMC);
+console.log("---------------------------------------------");
+
+// 7_ Funcion que retone un sting a mayuscula
+
+const MAYUSCULA = (textoUP) => textoUP.toUpperCase();
+
+let upper = MAYUSCULA("Esto es una cosa de locos");
+console.log(upper);
+console.log("---------------------------------------------");
+
+// 8_ tipo de dato
+
+const DATO = (tipoDato) => typeof tipoDato;
+
+let resultDato = DATO(true);
+console.log(resultDato);
+console.log("---------------------------------------------");
+
+// 9_ Calcular circunferencia
+
+const CIRCUNFERENCIA = (radio) => 2 * Math.PI * radio;
+
+let resCircunferencia = CIRCUNFERENCIA(6);
+console.log(resCircunferencia);
+console.log("---------------------------------------------");
+
+console.log("Gato" && "Perro");
+
+console.log("------------- Ejercicios ------------------");
+
+let loro = (texto = "Hola") => {
+  for (let i = 0; i < 5; i++) {
+    txtRepe = i + " - " + texto;
+    console.log(txtRepe);
+  }
+  return txtRepe;
+};
+
+loro();
+
+//console.log(loro());
+
+// Ejercicio 2
+
+console.log("------------- Ejercicios ------------------");
+
+function noParesDeContarImparesHasta(numero){
+  // Escribe aqui tu código
+  for(let i = 0; i <= numero; i++){
+      if(i%3 == 0){
+        let impar = i;
+        impar++;
+        console.log(impar);
+      }
+  }
+}
