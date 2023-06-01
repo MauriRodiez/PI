@@ -6,7 +6,7 @@
 const accesoBar = (edad) => {
   if (edad <= 0) {
     return "Numero invalido";
-  }
+  } 
 
   let impar = edad % 2 != 0 ? "Sabias que tu edad es impar?" : "";
 
