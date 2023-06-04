@@ -40,23 +40,31 @@ let banco = {
   consultarCliente: function (nombre) {
     for (let i = 0; i < this.clientes.length; i++) {
       if (this.clientes[i].titularCuenta === nombre) {
-        return this.clientes[i]
+        return this.clientes[i];
       }
     }
+    return "El cliente no fue encontrado";
   },
-  deposito : function (nombre, dinero) {
-    for(let i = 0; i < this.clientes.length; i++){
-        if(this.clientes[i].tipoDeCuenta === nombre){
-            this.clientes[i].saldoEnPesos += dinero
-            return this.clientes[i] + "Deposito correcto"
-        }
-    }
-  }
+  deposito: function (nombre, dinero) {
+    
+    let clienteEncontrado = this.consultarCliente(nombre)
+    clienteEncontrado.saldoEnPesos += dinero
+    //console.log("Deposito realizado, su nuevo saldo es " + clienteEncontrado.saldoEnPesos);
+    return ("Deposito realizado, su nuevo saldo es " + clienteEncontrado.saldoEnPesos)
+  },
+  extraccion : function(nombre, dinero){
+    let clienteEncontrado = this.consultarCliente(nombre)
+    clienteEncontrado.saldoEnPesos -= dinero
+    return ("Extraccion realizada con exito " + clienteEncontrado.saldoEnPesos)
 
+  }
 }
 
-let clienteEncontrado = banco.consultarCliente("Ramon Connell")
+let clienteEncontrado = banco.consultarCliente("Ramon Connell");
 console.log(clienteEncontrado);
 
-let nuevoSaldo = banco.deposito("Ramon Connell", 5000)
-console.log(nuevoSaldo);
+let transaccion = banco.deposito("Ramon Connell", 5000);
+console.log(transaccion);
+
+let extraccion = banco.extraccion("Ramon Connell", 10000);
+console.log(extraccion);
