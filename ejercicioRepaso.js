@@ -11,3 +11,29 @@
     especifica que recibiremos por parametros y tambien recibiremos por cuanto queremos
     multiplicar dicho precio
 */
+
+
+// Loop de pares - de 0 a 100
+
+const loopDePares =  numero => {
+
+    let numeroX 
+
+    for(let i = 0; i < 100; i++){
+
+        numeroX = i + numero
+
+        console.log(i);
+
+        if((i + numero)%2 === 0 ){
+
+            
+            console.log (`El numero ${numeroX} es par`)
+
+        }
+        return numeroX
+    }
+
+}
+
+console.log(loopDePares(31))
