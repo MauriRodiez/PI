@@ -184,4 +184,4 @@ let testFibo = fibonacci(10);
 // -> Si el usuario es Admin y la clave es 123456 mostrar el mensaje acceso permitido sino acceso denegado
 // 5-  Elaborar un programa que muestre la cantidad de numeros pares entre dos numeros.
 // 6- Elaborar un programa que permita ingresar un numero entero del 1 y 10 y muestre la tabla de multiplicar de ese numero.
-// 7-
+
