@@ -453,18 +453,17 @@ const comparaValoracion = (arr, arr1) => {
 
   let compa = 0;
   let compa1 = 0;
-  let comparacion = "";
+  let comparacion = []  
+  let datos =[]
 
   for (let i = 0; i < arr.length; i++) {
         compa = arr[i]
         compa1 = arr1[i]
 
         if(compa === compa1){
-          comparacion = `El numero de la posicion ${arr[i]} es igual el numero de ${arr1[i]}` 
-          console.log(comparacion)
-        }else{
-          comparacion = `El numero de la posicion ${arr[i]} es diferente el numero de ${arr1[i]}`
-          console.log(comparacion)
+          datos = `El numero de la posicion ${arr[i]} es igual el numero de ${arr1[i]}` 
+          comparacion.unshift(datos)
+          return comparacion
         }
         
   }

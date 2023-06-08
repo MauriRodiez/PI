@@ -132,12 +132,86 @@ console.log(resultPalindromo);
 
 
 // 1- Algoritmo para convertir una cantidad de pesos a dolares
+
+const cambio = pesos => {
+    return pesos * 40.20
+}
+
+let cambioDolar = cambio(1000)
+console.log(cambioDolar);
+
+
 // 2- Algoritmo que calcule el salario de un empleado, si se descuenta el 20% de su salario
-// 3- Hacer un programa para calcular el promedio de 3 notas, si el promedio es mayor o igual que 7 = aprobado sino desaprobado
+
+const salario = sueldo => {
+    let descuento = sueldo * 0.20
+    return sueldo - descuento
+}
+
+let salarioEmpleado = salario(10000)
+console.log(salarioEmpleado);
+
+// 3- Hacer un programa para calcular el promedio de 3 notas, si el promedio es mayor o 
+// igual que 7 = aprobado sino desaprobado
+
+const calificacion = (nota1, nota2, nota3) => {
+    let promedio = (nota1+nota2+nota3) / 3
+    if(promedio >= 7){
+        return "Has aprobado la materia"
+    }else{
+        return "No has aprobado"
+    }
+}
+
+let estudiante = calificacion(6,8,7)
+console.log(estudiante);
+
+
 // 4- Elaborar un programa que simule una clave de acceso:
-// -> Si el usuario es Admin y la clave es 123456 mostrar el mensaje acceso permitido sino acceso denegado
+// -> Si el usuario es Admin y la clave es 123456 mostrar el mensaje acceso 
+// permitido sino acceso denegado
+
+const acceso = (usuario, clave) => {
+    if(usuario === "Admin" && clave === "123456"){
+        return "Acceso permitido"
+    }else{
+        return "Acceso denegado"
+    }
+}
+
+let usuario = acceso("Admina", "123456")
+console.log(usuario);
+
 // 5-  Elaborar un programa que muestre la cantidad de numeros pares entre dos numeros.
-// 6- Elaborar un programa que permita ingresar un numero entero del 1 y 10 y muestre la tabla de multiplicar de ese numero.
+
+const cantidadPares = (num1, num2) => {
+    let pares = []
+    for (let i = num1; i < num2; i++) {
+        if (i%2 === 0){
+            pares.push(i)
+        }        
+    }
+    return pares
+}
+
+let numerosPares = cantidadPares(3,30)
+console.log(numerosPares);
+
+// 6- Elaborar un programa que permita ingresar un numero entero del 1 y 10 y muestre 
+// la tabla de multiplicar de ese numero.
+
+const tabla = numero => {
+    let tablaMultiplicada = []
+    let i = 0;
+    while (i <= 10) {
+        tablaMultiplicada.push(`${numero} x ${i} = ${numero * i}`) 
+        i++
+    }
+    return tablaMultiplicada
+}
+
+let tablaMultiplicada = tabla(5)
+console.log(tablaMultiplicada);
 
 // Ejercicio 1
 // Realizar una funcion que reciba por parametro dos valores,
@@ -146,20 +220,51 @@ console.log(resultPalindromo);
 // En cambio, si el numero es impar y el booleano es false retornar "No ha pasado la condicion"-
 // Otro caso debe retornar -1
 
+const resultadoValores = (numero, bool) => {
+    if(numero %2 === 0 && bool){
+        return "Ha pasado la condicion"
+    }else if(numero %2 !== 0 && !bool) {
+        return "No ha pasado la condicion"
+    } else{
+        return -1
+    }
+}
+
+let resultadoCondicion = resultadoValores(13, true)
+console.log(resultadoCondicion);
+
 // Ejercicio 2
-// Realizar una funcion que indique si una persona se encuentr apta para una competencia fisica.
+// Realizar una funcion que indique si una persona se encuentra apta para una competencia fisica.
 // Para eso, debemos realizar una funcion que reciba dos parametros
 // la edad de la persona (number)
 // Si ha entregado sus estudios medicos (booleano)
 // La funcion debera evaluar las siguientes condiciones y retornar en cada caso se le pida:
 // Si ha entregado sus estudios y es mayor o igual a 18 años: retornar un valor booleano true
-// Si ha entregado sus estudios pero es menor de  18 años: retorna un string que diga "solo puede competir con un adulto acompañante"
+// Si ha entregado sus estudios pero es menor de  18 años: retorna un string que diga  
+// "solo puede competir con un adulto acompañante"
 // Para cualquier otro caso: retorna un valor booleano false.
+
+const competenciaFisica = (numero, estudios) => {
+    if(estudios){
+        if (numero >= 18) {
+            return true
+        } else if(numero < 18){
+            return "Solo puede competir con un adulto acompañante"
+        }
+    }else{
+        return false
+    }
+}
+
+let participacion = competenciaFisica(19, false)
+console.log(participacion);
+
 
 // Ejercicio 3
 // Realizar una funcion que recibe el array como parametro y lo recorro
 // para filtrar los objetos cuya cantidad de paginas sea mayor a 300.
-// la funcion debera retornar un nuevo arreglo con los libros que cumplan con la condicion antes mencionada.
+// la funcion debera retornar un nuevo arreglo con los libros que cumplan con la 
+// condicion antes mencionada.
 
 let libros = [
     {
@@ -182,4 +287,28 @@ let libros = [
       autor: "Blue Jeans",
       paginas: 480,
     },
-  ];
+  ]
+
+
+const filtoLibros = array => {
+    
+    let librosXPaginas = []
+    for (let i = 0; i < array.length; i++) {
+           if(array[i].paginas > 300){
+                librosXPaginas.push(array[i])
+           }        
+    }
+    return librosXPaginas
+
+}
+
+let librosEncontrados = filtoLibros(libros)
+console.log(librosEncontrados);
+
+/////////////////////////////////////////////////////////////////////////
+
+// Ejercicio 1
+
+const edades = [11,12,15,18,25,22,10,33,18,5]
+
+// a) Obtener en un nuevo array las edades menores a 18 
