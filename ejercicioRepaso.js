@@ -312,13 +312,88 @@ console.log(librosEncontrados);
 const edades = [11,12,15,18,25,22,10,33,18,5]
 
 // a) Obtener en un nuevo array las edades menores a 18 
-// b) Obtener en un nuevo array las edades menores a 18.
-// c) Obtener en un nuevo array las edades mayor o igual a 18.
-// d) Obtener en un nuevo array las edades igual a 18.
-// e) Obtener el menor.
-// f) Obtener el mayor. 
-// g) Obtener el promedio de edades.
-// h) Incrementar en 1 todas las edades.
+
+const edadesMenores = array => {
+    let menoresDieciocho = []
+    for (let i = 0; i < array.length; i++) {
+        if(array[i] < 18){
+            menoresDieciocho.push(array[i])
+        }        
+    }
+    return menoresDieciocho
+}
+
+let resultEdadesMenores = edadesMenores(edades)
+console.log(resultEdadesMenores);
+
+// b) Obtener en un nuevo array las edades mayor o igual a 18.
+
+const edadesMayores = array => {
+
+    let mayores = []
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] >= 18) {
+            mayores.push(array[i])
+        }        
+    }
+    return mayores
+}
+
+let mayoresEdad = edadesMayores(edades)
+console.log(mayoresEdad);
+
+
+// c) Obtener en un nuevo array las edades igual a 18.
+
+const igualesDieciocho = array => {
+    let iguales  = []
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === 18) {
+            iguales.push(array[i])
+        }        
+    }
+    return iguales
+}
+
+let igualesEdad = igualesDieciocho(edades)
+console.log(igualesEdad);
+
+// d) Obtener el menor.
+
+const edadMasChica = array => {
+    let comodin = array[0]
+    for (let i = 0; i < array.length; i++) {
+        if (comodin > array[i]) {
+            comodin = array[i]
+        }        
+    }
+    return comodin
+}
+
+let laMenor = edadMasChica(edades)
+console.log(laMenor);
+
+// e) Obtener el mayor. 
+
+const edadMasGrande = array => {
+    let comodin = array[0]
+    for (let i = 0; i < array.length; i++) {
+        if (comodin < array[i]) {
+            comodin = array[i]
+        }        
+    }
+    return comodin
+}
+
+let laMayor = edadMasGrande(edades)
+console.log(laMayor);
+
+
+// f) Obtener el promedio de edades.
+
+
+
+// g) Incrementar en 1 todas las edades.
 
 // Ejercicio 2
 
@@ -427,11 +502,36 @@ let busqueda = buscarXid(arrayCuentas, 2)
 console.log(busqueda);
 
 // 3 - Desarrollar una función llamada filtrarPorSaldos que reciba como parámetro el array de cuentas y un saldo (Number), deberá 
-// retornar un array que se cuyas cuentas se encuentren por debajo del saldo enviado por parámetro
+// retornar un array que cuyas cuentas se encuentren por debajo del saldo enviado por parámetro
 
+const filtroPorSaldos = (array, saldo) => {
 
+    let saldoCuenta = []
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].saldo < saldo) {
+            saldoCuenta.push(array[i])
+        }        
+    }
+    return saldoCuenta
+}
 
+let saldos = filtroPorSaldos(arrayCuentas, 2500)
+console.log(saldos);
 
 // 4 - Desarrollar una función llamada incrementarSaldo que reciba como parámetro el array de cuentas, un id y un saldo, deberá 
 // incrementar él saldo de la cuenta, en caso de encontrar, caso contrario retornar undefined 
 // Reutilizando la función  buscarPorId 
+
+
+const incrementarSaldo = (array, id, num) => {
+
+    for (let i = 0; i < array.length; i++) {
+        if(buscarXid(array,id)){
+            return array[i].saldo += num
+        }       
+    }
+    return undefined
+}
+
+let aumento = incrementarSaldo(arrayCuentas, 1, 500)
+console.log(aumento);
