@@ -42,7 +42,8 @@ console.log(`La persona ${accesoTurista}`);
 
 console.log("-------- Ejercicio 3 -------------");
 
-let paises =  [{
+let paises =  [
+    {
     cantidadDeVisitas: 3,
     clima: 'soleado',
     habitantes: '212 millones'
