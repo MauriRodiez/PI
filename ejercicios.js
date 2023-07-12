@@ -185,3 +185,13 @@ let testFibo = fibonacci(10);
 // 5-  Elaborar un programa que muestre la cantidad de numeros pares entre dos numeros.
 // 6- Elaborar un programa que permita ingresar un numero entero del 1 y 10 y muestre la tabla de multiplicar de ese numero.
 
+
+let name = "alice";
+name = 100;
+
+console.log(name);
+
+//let x = 2e4
+let x = 10/100
+let p = typeof(x)
+console.log(p);
